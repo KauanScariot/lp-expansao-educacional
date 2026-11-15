@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expansão Educacional | Transforme sua autoridade em uma nova fonte de receita</title>
+<meta name="description" content="Transformamos o conhecimento de profissionais de referência em eventos, experiências educacionais e novas oportunidades de negócio.">
+<meta property="og:title" content="Expansão Educacional">
+<meta property="og:description" content="Você já construiu autoridade. Agora é hora de transformar isso em uma nova fonte de receita.">
+<meta property="og:image" content="assets/hero-desktop.webp">
+<meta name="theme-color" content="#070605">
+
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/Syne-Bold.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff" href="assets/fonts/InterTight-Variable.woff" crossorigin>
+<link rel="preload" as="image" href="assets/hero-desktop.webp" media="(min-width: 1080px)">
+<link rel="preload" as="image" href="assets/hero-mobile.webp" media="(max-width: 1079px)">
+
+<style>
+/* ---------- Fontes (arquivos em assets/fonts) ---------- */
+@font-face{font-family:"Syne";src:url("assets/fonts/Syne-Bold.woff2") format("woff2");font-weight:600 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Syne";src:url("assets/fonts/Syne-Extra.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter Tight";src:url("assets/fonts/InterTight-Variable.woff") format("woff");font-weight:100 900;font-style:normal;font-display:swap}
+
+/* =========================================================
+   TOKENS — troque aqui cores e fontes do projeto inteiro
+   ========================================================= */
+:root{
+  --bg:        #070605;   /* preto quente (base) */
+  --bg-2:      #0c0a07;   /* preto amadeirado */
+  --brown:     #17120b;   /* marrom escuro */
+  --brown-2:   #241b0f;
+  --gold:      #d9a441;   /* dourado (destaques) */
+  --gold-2:    #b9822c;   /* dourado profundo (gradientes) */
+  --champagne: #f5dca6;   /* champanhe (brilhos) */
+  --bronze:    #8a5a1c;   /* bronze (profundidade) */
+  --white:     #ffffff;
+  --text:      #cfc6b6;
+  --muted:     #968c7d;
+  --line:      rgba(245,220,166,.14);
+
+  --font-display: "Syne", "Inter Tight", system-ui, sans-serif;
+  --font-body:    "Inter Tight", "Inter", system-ui, sans-serif;
+
+  --radius: 22px;
+  --container: 1200px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--font-body);font-size:18px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;color:var(--white);font-family:var(--font-display);font-weight:700;letter-spacing:-.03em;line-height:1.05}
+p{margin:0}
+.hl{color:var(--gold)}
+.container{width:min(var(--container),100% - 48px);margin-inline:auto}
+section{position:relative}
+
+/* ---------- Botão (pílula com seta) ---------- */
+.btn{
+  --h:76px;justify-content:center;text-align:center;
+  display:inline-flex;align-items:center;gap:28px;
+  height:var(--h);padding:0 52px;border-radius:999px;
+  background:linear-gradient(90deg,#f3cd7a 0%,var(--gold) 45%,var(--gold-2) 100%);
+  color:#140f08;font-family:var(--font-body);font-weight:700;font-size:21px;letter-spacing:-.02em;text-transform:uppercase;
+  box-shadow:0 18px 50px -12px rgba(185,130,44,.65),inset 0 1px 0 rgba(255,255,255,.35);
+  position:relative;isolation:isolate;overflow:hidden;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
+}
+.btn::after{ /* brilho que passa */
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);
+  transform:translateX(-120%);animation:shine 4.5s ease-in-out infinite;
+}
+.btn__arrow{
+  width:46px;height:46px;border-radius:50%;background:#0a0704;color:var(--champagne);display:grid;place-items:center;flex:none;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.btn__arrow svg{width:18px;height:18px}
+.btn:hover{transform:translateY(-3px);box-shadow:0 24px 60px -10px rgba(185,130,44,.85),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn:hover .btn__arrow{transform:translateX(5px)}
+@keyframes shine{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+
+/* Variante com anel (seção 3) */
+.btn--ring{outline:1.5px solid rgba(245,220,166,.45);outline-offset:6px}
+
+/* ---------- Eyebrow ---------- */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:9px 18px;border-radius:999px;border:1px solid var(--line);
+  background:rgba(185,130,44,.07);color:var(--champagne);
+  font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+
+.sec-head h2:first-child,.faq__head h2:first-child,.provoke h2:first-child{margin-top:0}
+
+/* ---------- Reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.is-in{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.1s}
+.reveal[data-delay="2"]{transition-delay:.2s}
+.reveal[data-delay="3"]{transition-delay:.3s}
+.reveal[data-delay="4"]{transition-delay:.4s}
+.reveal[data-delay="5"]{transition-delay:.5s}
+
+/* =========================================================
+   01 — HERO
+   ========================================================= */
+.hero{
+  /* altura da foto: no máx. metade da largura (16:9 de 50vw) e da altura da tela */
+  --H:clamp(500px,min(48vw,100svh),1000px);
+  min-height:var(--H);display:flex;align-items:center;
+  background:var(--bg);padding:70px 0 120px;overflow-x:clip;
+}
+/* A foto fica ancorada à direita, sempre inteira (sem cortes laterais) */
+/* Foto ancorada no canto inferior direito, sempre inteira e ocupando ~metade da tela */
+.hero__bg{position:absolute;bottom:0;right:0;height:var(--H);width:calc(var(--H) * 1.8745);pointer-events:none;
+  background:url("assets/hero-desktop.webp") center / cover no-repeat;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 10%);mask-image:linear-gradient(180deg,transparent 0%,#000 10%)}
+.hero__bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,var(--bg) 0%,rgba(7,6,5,.6) 10%,rgba(7,6,5,0) 26%),linear-gradient(0deg,rgba(7,6,5,.5) 0%,rgba(7,6,5,0) 22%)}
+.hero__inner{position:relative;width:min(1680px,100% - 48px);margin-inline:auto;padding-left:clamp(0px,4.2vw,96px)}
+/* O texto termina antes de onde começam os elementos da foto (~45% da imagem) */
+.hero__content{max-width:min(780px,calc(100vw - 1.05 * var(--H) - max(24px,(100vw - 1680px) / 2) - clamp(0px,4.2vw,96px) - 48px))}
+.hero h1{font-size:clamp(1.85rem,2.75vw,3.6rem)}
+.hero__sub{margin-top:12px;font-size:clamp(1.05rem,1.4vw,1.75rem);line-height:1.35;letter-spacing:-.02em;color:#b3aa9c;font-weight:400}
+.hero .btn{--h:58px;margin-top:36px;white-space:nowrap;font-size:clamp(15px,1.1vw,17px);padding:0 clamp(30px,2.6vw,42px)}
+.hero .btn .btn__arrow{width:38px;height:38px}
+.hero .btn .btn__arrow svg{width:16px;height:16px}
+
+/* Faixas infinitas */
+/* Faixa infinita integrada à base da imagem */
+.ribbons{position:absolute;left:0;right:0;bottom:0;z-index:3;pointer-events:none}
+.ribbon{
+  position:relative;overflow:hidden;padding:20px 0;color:var(--champagne);
+  background:linear-gradient(180deg,rgba(7,6,5,.35) 0%,rgba(7,6,5,.78) 100%);
+  backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);
+  border-top:1px solid rgba(217,164,65,.35);border-bottom:1px solid rgba(217,164,65,.35);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);
+          mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);
+}
+.ribbon::before,.ribbon::after{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--champagne),transparent);opacity:.7}
+.ribbon::before{top:0}.ribbon::after{bottom:0}
+.ribbon__track{display:flex;width:max-content;animation:marquee 46s linear infinite}
+.ribbon__group{display:flex;align-items:center;flex:none}
+.ribbon__item{display:flex;align-items:center;gap:30px;padding-right:30px;font-family:var(--font-display);font-weight:600;font-size:14px;letter-spacing:.18em;opacity:.9;text-transform:uppercase;white-space:nowrap}
+.ribbon__item svg{width:14px;height:14px;flex:none;color:var(--gold)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Cabeçalho padrão de seção */
+.sec-head{text-align:center;max-width:860px;margin:0 auto 60px}
+.sec-head h2{font-size:clamp(1.9rem,3.2vw,3.35rem);margin-top:22px}
+.sec-head p{margin:22px auto 0;max-width:680px;font-size:clamp(1.05rem,1.35vw,1.25rem);color:var(--text)}
+
+/* =========================================================
+   02 — PARA QUEM É
+   ========================================================= */
+.forwho{display:flex;align-items:center;min-height:max(560px,50vw);padding:70px 0;background:#000;overflow:hidden}
+/* Foto 16:9 sempre na largura total: o notebook nunca passa da metade esquerda */
+.forwho__bg{position:absolute;left:0;top:50%;width:100%;aspect-ratio:16/9;transform:translateY(-50%);pointer-events:none;
+  background:url("assets/para-quem-bg.webp") center / cover no-repeat;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 12%,#000 88%,transparent 100%);
+          mask-image:linear-gradient(180deg,transparent 0%,#000 12%,#000 88%,transparent 100%)}
+.forwho__grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.forwho__content{grid-column:2}
+.forwho h2{font-size:clamp(1.9rem,3vw,3rem);margin-bottom:34px}
+.forwho__list{display:grid;gap:14px}
+.fcard{
+  display:flex;align-items:flex-start;gap:18px;padding:24px 26px;border-radius:22px;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.012));
+  border:1px solid rgba(217,164,65,.2);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1),border-color .4s,background .4s;
+}
+.fcard:hover{border-color:rgba(217,164,65,.5);background:linear-gradient(180deg,rgba(217,164,65,.07),rgba(255,255,255,.012))}
+.fcard h3{font-size:clamp(1.15rem,1.45vw,1.35rem);line-height:1.25;letter-spacing:-.02em;margin:2px 0 8px}
+.fcard p{font-size:16.5px;line-height:1.55;color:var(--text)}
+
+/* =========================================================
+   03 — PROVOCAÇÃO
+   ========================================================= */
+.provoke{padding:90px 0;background:linear-gradient(180deg,var(--bg) 0%,#040302 100%);overflow:hidden}
+.provoke::before{content:"";position:absolute;left:-10%;top:10%;width:60%;height:80%;background:radial-gradient(closest-side,rgba(138,90,28,.16),transparent);pointer-events:none}
+.provoke__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:center}
+.provoke h2{font-size:clamp(2.1rem,4.1vw,4.4rem);margin-top:26px;line-height:1.04}
+.race{position:relative;margin-top:46px;height:52px;max-width:640px}
+.race__line{position:absolute;left:0;right:6px;bottom:8px;height:2px;background:linear-gradient(90deg,rgba(217,164,65,.25),var(--gold))}
+.race__arrow{position:absolute;right:0;bottom:2px;width:16px;height:14px;color:var(--gold)}
+.race__runner{position:absolute;left:0;bottom:10px;width:46px;height:46px;color:var(--gold);filter:drop-shadow(0 0 8px rgba(217,164,65,.8))}
+.provoke__side p{font-size:clamp(1.05rem,1.35vw,1.3rem);line-height:1.6;color:#b8ae9e}
+.provoke__side p + p{margin-top:18px}
+.provoke__side strong{color:#fff;font-weight:600}
+.provoke__side .btn{margin-top:42px;--h:64px;font-size:18px;padding:0 44px;white-space:nowrap}
+
+/* Check dourado (usado nos cards da seção 2) */
+.bcard__check{
+  flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;color:#fff;
+  background:linear-gradient(145deg,#f0c46a 0%,var(--gold-2) 55%,var(--bronze) 100%);
+  box-shadow:0 0 24px rgba(217,164,65,.45),inset 0 1px 0 rgba(255,255,255,.45);
+}
+.bcard__check svg{width:22px;height:22px}
+
+/* =========================================================
+   05 — COMO FUNCIONA NOSSO PROJETO (tabuleiro com cards ligados às peças)
+   ========================================================= */
+.process{padding:80px 0 80px;background:#000;overflow:hidden}
+.process .sec-head{margin-bottom:0;position:relative;z-index:2}
+.process__stage{position:relative;width:min(1400px,100% - 32px);margin:-40px auto 0;aspect-ratio:1672 / 941;
+  container-type:inline-size}
+.process__img{position:absolute;inset:0;background:url("assets/processo-bg.webp") center / cover no-repeat;
+  -webkit-mask-image:radial-gradient(75% 85% at 50% 55%,#000 60%,transparent 100%);
+          mask-image:radial-gradient(75% 85% at 50% 55%,#000 60%,transparent 100%)}
+.process__lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.process__lines path{fill:none;stroke:url(#pl-line);stroke-width:1.4;vector-effect:non-scaling-stroke;
+  stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s cubic-bezier(.6,0,.2,1) .25s}
+.process__lines circle{fill:var(--champagne);opacity:0;transition:opacity .4s 1.5s;filter:drop-shadow(0 0 6px var(--gold))}
+.process__stage.is-in .process__lines path{stroke-dashoffset:0}
+.process__stage.is-in .process__lines circle{opacity:1}
+.pstep{position:absolute;width:24%;padding:clamp(16px,1.6cqw,24px) clamp(18px,1.8cqw,26px);border-radius:16px;
+  background:linear-gradient(180deg,rgba(24,19,12,.82),rgba(10,8,5,.82));
+  border:1px solid rgba(217,164,65,.32);
+  box-shadow:0 20px 50px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1),border-color .4s}
+.pstep:hover{border-color:rgba(217,164,65,.65)}
+.pstep--1{left:3%;top:20%}
+.pstep--2{right:3%;top:20%}
+.pstep--3{left:3%;bottom:2%}
+.pstep--4{right:3%;bottom:2%}
+.pstep__n{display:block;font-family:var(--font-display);font-weight:700;font-size:clamp(12px,1cqw,14px);letter-spacing:.06em;color:var(--gold);margin-bottom:6px}
+.pstep h3{font-size:clamp(1rem,1.35cqw,1.3rem);line-height:1.2;letter-spacing:-.02em;margin-bottom:8px}
+.pstep p{font-size:clamp(13.5px,1.05cqw,16px);line-height:1.5;color:var(--text)}
+
+/* =========================================================
+   06 — FAQ (simples)
+   ========================================================= */
+.final{padding:90px 0 90px;background:linear-gradient(180deg,var(--bg) 0%,#040302 100%)}
+.faq{max-width:820px;margin:0 auto}
+.faq__head{text-align:center;margin-bottom:40px}
+.faq__head h2{font-size:clamp(2rem,3.4vw,3.2rem);margin-top:22px}
+.faq__item{padding:30px 0;border-top:1px solid rgba(255,255,255,.09)}
+.faq__item:last-child{border-bottom:1px solid rgba(255,255,255,.09)}
+.faq__item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.faq__item summary::-webkit-details-marker{display:none}
+.faq__item summary:focus-visible{outline:2px solid var(--gold);outline-offset:6px;border-radius:6px}
+.faq__plus{flex:none;position:relative;width:22px;height:22px;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.faq__plus::before,.faq__plus::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:2px;border-radius:2px;background:var(--gold);transform:translate(-50%,-50%)}
+.faq__plus::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .3s}
+.faq__item[open] .faq__plus{transform:rotate(180deg)}
+.faq__item[open] .faq__plus::after{transform:translate(-50%,-50%) rotate(0);opacity:0}
+.faq__item summary:hover h3{color:var(--champagne)}
+.faq__a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}
+.faq__item.is-open .faq__a{grid-template-rows:1fr}
+.faq__a > div{overflow:hidden}
+.faq__item h3{transition:color .3s;font-family:var(--font-body);font-size:clamp(1.1rem,1.5vw,1.3rem);font-weight:700;letter-spacing:-.02em;line-height:1.3}
+.faq__item p{padding-top:12px;font-size:17px;color:var(--text);max-width:720px}
+
+.footer{padding:40px 0 50px;background:#040302;border-top:1px solid rgba(255,255,255,.06);text-align:center;font-size:14px;color:var(--muted)}
+
+/* Botão flutuante WhatsApp */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:50;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),var(--gold-2));box-shadow:0 14px 34px -8px rgba(185,130,44,.8);color:#140f08;transform:translateY(120px);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.wa-float.is-visible{transform:none}
+.wa-float svg{width:28px;height:28px}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--gold);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{from{transform:scale(1);opacity:.8}to{transform:scale(1.55);opacity:0}}
+
+/* =========================================================
+   05 — BENEFÍCIOS (checks)
+   ========================================================= */
+.benefits{padding:90px 0;background:#000;overflow:hidden}
+.benefits__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;position:relative;max-width:1150px;margin-inline:auto}
+.bcard{
+  display:flex;align-items:center;gap:20px;padding:34px 34px;border-radius:24px;
+  background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.01));
+  border:1px solid rgba(217,164,65,.18);
+  transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1),border-color .4s,background .4s;
+}
+.bcard:hover{border-color:rgba(217,164,65,.45);background:linear-gradient(180deg,rgba(217,164,65,.06),rgba(255,255,255,.01))}
+.bcard h3{font-size:clamp(1.25rem,1.75vw,1.65rem);line-height:1.2;letter-spacing:-.025em}
+
+/* =========================================================
+   SEÇÕES CLARAS (provocação + FAQ)
+   ========================================================= */
+.provoke,.final{--ink:#0c0a07;--ink-2:#5a5247;--gold-ink:#a8721c;background:#fff;color:var(--ink-2)}
+.provoke h2,.final h2,.final h3{color:var(--ink)}
+.provoke .hl,.final .hl{color:var(--gold-ink)}
+.provoke::before{background:radial-gradient(closest-side,rgba(217,164,65,.12),transparent)}
+.provoke__side p{color:var(--ink-2)}
+.provoke__side strong{color:var(--ink)}
+.race__line{background:linear-gradient(90deg,rgba(168,114,28,.2),var(--gold-ink))}
+.race__arrow,.race__runner{color:var(--gold-ink)}
+.race__runner{filter:none}
+.btn--ring{outline-color:rgba(168,114,28,.45)}
+.provoke .btn,.final .btn{box-shadow:0 16px 36px -14px rgba(168,114,28,.7),inset 0 1px 0 rgba(255,255,255,.45)}
+.final{border-top:1px solid rgba(12,10,7,.08)}
+.final .container{position:relative}
+.faq__item{border-top-color:rgba(12,10,7,.12)}
+.faq__item:last-child{border-bottom-color:rgba(12,10,7,.12)}
+.faq__item p{color:var(--ink-2)}
+.faq__item summary:hover h3{color:var(--gold-ink)}
+.faq__plus::before,.faq__plus::after{background:var(--gold-ink)}
+.footer{background:#fff;color:#5a5247;border-top-color:rgba(12,10,7,.1)}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+/* Abaixo de 1080px: hero vertical — foto (recorte vertical) em cima, texto embaixo */
+@media (max-width:1079px){
+  .hero{display:block;min-height:0;padding:0 0 110px}
+  .hero__bg{position:relative;bottom:auto;right:auto;height:min(95.7vw,640px);width:min(100%,calc(min(95.7vw,640px) * 1.045));margin-inline:auto;
+    background:url("assets/hero-mobile.webp") center / cover no-repeat;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 16%,#000 84%,transparent 100%);
+            mask-image:linear-gradient(90deg,transparent 0%,#000 16%,#000 84%,transparent 100%)}
+  .hero__bg::after{background:linear-gradient(0deg,var(--bg) 0%,rgba(7,6,5,0) 26%)}
+  .hero__inner{padding:24px 0 0;width:min(100% - 36px,720px)}
+  .hero__content{text-align:center;margin-inline:auto;max-width:none}
+  .hero h1{font-size:clamp(1.55rem,4.6vw,2.6rem)}
+  .hero__sub{margin:10px auto 0;font-size:clamp(1rem,2.4vw,1.25rem)}
+  .hero .btn{--h:54px;font-size:15px;padding:0 30px}
+}
+@media (max-width:600px){
+  .hero__bg{-webkit-mask-image:none;mask-image:none}
+  .hero h1{font-size:clamp(1.55rem,6.3vw,2.6rem)}
+  .hero__sub{font-size:clamp(1rem,4.1vw,1.25rem)}
+}
+/* Abaixo de 1000px: imagem em cima, cards em grade */
+@media (max-width:999px){
+  .process{padding:64px 0 64px}
+  .process__stage{aspect-ratio:auto;width:min(100% - 36px,760px);margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .process__img{position:relative;inset:auto;grid-column:1 / -1;aspect-ratio:912 / 620;background-image:url("assets/processo-mobile.webp");margin-bottom:6px;
+    -webkit-mask-image:radial-gradient(70% 80% at 50% 55%,#000 55%,transparent 100%);mask-image:radial-gradient(70% 80% at 50% 55%,#000 55%,transparent 100%)}
+  .process__lines{display:none}
+  .pstep{position:relative;inset:auto;width:auto;padding:20px;text-align:center}
+  .pstep h3{font-size:1.1rem}
+  .pstep p{font-size:15px}
+}
+@media (max-width:600px){
+  .process__stage{grid-template-columns:1fr}
+}
+@media (max-width:1100px){
+  .provoke__grid{gap:50px}
+}
+@media (max-width:900px){
+  body{font-size:16px}
+  /* Hero mobile: foto no topo, texto centralizado abaixo */
+  .hero .btn{margin-top:32px}
+  .ribbon{padding:14px 0}
+  .ribbon__item{font-size:11px;gap:18px;padding-right:18px;letter-spacing:.14em}
+
+  .btn{--h:56px;font-size:15px;padding:0 30px}
+  .btn__arrow{width:40px;height:40px}
+
+  .sec-head{margin-bottom:40px}
+
+  .forwho{display:block;min-height:0;padding:0 0 64px}
+  .forwho__bg{position:relative;top:auto;transform:none;aspect-ratio:900 / 860;background-image:url("assets/para-quem-mobile.webp");
+    -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 10%,#000 82%,transparent 100%);
+            mask-image:linear-gradient(180deg,transparent 0%,#000 10%,#000 82%,transparent 100%)}
+  .forwho__grid{grid-template-columns:1fr;padding-top:8px}
+  .forwho__content{grid-column:1}
+  .forwho h2{text-align:center;margin-bottom:26px}
+  .fcard{flex-direction:column;align-items:center;text-align:center;padding:22px 18px;gap:12px;border-radius:20px}
+  .fcard h3{font-size:1.1rem}
+  .fcard p{font-size:15px}
+
+  .provoke{padding:64px 0}
+  .provoke__grid{grid-template-columns:1fr;gap:34px;text-align:center}
+  .race{margin-inline:auto}
+  .provoke__side .btn{--h:56px;font-size:15px;padding:0 30px}
+
+  .benefits{padding:64px 0}
+  .benefits__grid{grid-template-columns:1fr;gap:12px}
+  .bcard{flex-direction:column;justify-content:center;text-align:center;padding:22px 20px;gap:12px;border-radius:20px}
+  .bcard h3{font-size:1.08rem}
+  .final{padding:64px 0 64px}
+  .faq__head{margin-bottom:28px}
+  .faq__item{padding:24px 0}
+  .faq__item p{font-size:15.5px}
+  .bcard__check{width:40px;height:40px;border-radius:11px}
+  .bcard__check svg{width:19px;height:19px}
+
+}
+@media (max-width:480px){
+  .btn{font-size:15px;padding:0 26px;text-align:center;line-height:1.15;max-width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG sprites reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="currentColor"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.88 9.88 0 0 0 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.35-.5.05-1.13.07-1.82-.11a16.5 16.5 0 0 1-1.65-.61c-2.9-1.25-4.8-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.83 2 .9 2.15.07.14.12.31.02.5-.1.2-.14.31-.29.48-.14.17-.3.38-.43.5-.14.15-.29.3-.12.59.17.29.74 1.22 1.59 1.98 1.1.97 2.02 1.28 2.3 1.42.3.15.46.12.63-.07.17-.2.73-.85.92-1.14.2-.29.39-.24.65-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.08.12.08.69-.16 1.37z"/></symbol>
+</svg>
+
+<main>
+
+<!-- ============ 01 HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__content">
+      <h1 class="reveal">Você já construiu autoridade. Agora é hora de transformar isso em <span class="hl">uma nova fonte de receita.</span></h1>
+      <p class="hero__sub reveal" data-delay="1">Transformamos o conhecimento de profissionais de referência em eventos, experiências educacionais e novas oportunidades de negócio.</p>
+      <a class="btn reveal" data-delay="2" data-wa="Oi! Vi o site e gostaria de mais informações sobre o projeto." href="#" target="_blank" rel="noopener">
+        Quero expandir meu negócio
+      </a>
+    </div>
+  </div>
+
+  <div class="ribbons" aria-hidden="true">
+    <div class="ribbon"><div class="ribbon__track" data-ribbon></div></div>
+  </div>
+</section>
+
+<!-- ============ 02 PARA QUEM É ============ -->
+<section class="forwho" id="para-quem">
+  <div class="forwho__bg" aria-hidden="true"></div>
+  <div class="container forwho__grid">
+    <div class="forwho__content">
+      <h2 class="reveal">Este projeto é para <span class="hl" style="white-space:nowrap">você que:</span></h2>
+      <div class="forwho__list">
+        <article class="fcard reveal" data-delay="1">
+          <span class="bcard__check"><svg><use href="#i-check"/></svg></span>
+          <div><h3>Já é referência no que faz</h3><p>Tem conhecimento, experiência e reconhecimento na sua área e na sua região.</p></div>
+        </article>
+        <article class="fcard reveal" data-delay="2">
+          <span class="bcard__check"><svg><use href="#i-check"/></svg></span>
+          <div><h3>Tem pessoas que confiam em você</h3><p>Clientes, pacientes ou seguidores que valorizam o seu trabalho e querem aprender com você.</p></div>
+        </article>
+        <article class="fcard reveal" data-delay="3">
+          <span class="bcard__check"><svg><use href="#i-check"/></svg></span>
+          <div><h3>Quer crescer além da rotina</h3><p>Busca uma nova fonte de receita sem depender apenas dos atendimentos e da agenda atual.</p></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 COMO FUNCIONA NOSSO PROJETO ============ -->
+<section class="process" id="processo">
+  <div class="container">
+    <header class="sec-head">
+      <h2 class="reveal">Como funciona <span class="hl">nosso projeto?</span></h2>
+    </header>
+  </div>
+  <div class="process__stage reveal">
+    <div class="process__img" aria-hidden="true"></div>
+    <!-- linhas ligando cada card a uma peça (coordenadas da imagem 1672×941) -->
+    <svg class="process__lines" viewBox="0 0 1672 941" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="pl-line" x1="0" x2="1"><stop offset="0" stop-color="#f5dca6" stop-opacity=".25"/><stop offset=".5" stop-color="#d9a441"/><stop offset="1" stop-color="#f5dca6" stop-opacity=".9"/></linearGradient></defs>
+      <path pathLength="1" d="M451 270H690V545"/>
+      <path pathLength="1" d="M1221 270H982V545"/>
+      <path pathLength="1" d="M451 840H588V735"/>
+      <path pathLength="1" d="M1221 840H1086V735"/>
+      <circle cx="690" cy="545" r="5"/><circle cx="982" cy="545" r="5"/><circle cx="588" cy="735" r="5"/><circle cx="1086" cy="735" r="5"/>
+    </svg>
+    <article class="pstep pstep--1">
+      <span class="pstep__n">01.</span>
+      <h3>Planejamento estratégico</h3>
+      <p>Definimos a oferta, o público e o formato ideal para o seu projeto.</p>
+    </article>
+    <article class="pstep pstep--2">
+      <span class="pstep__n">02.</span>
+      <h3>Posicionamento e lançamento</h3>
+      <p>Criamos a identidade, a comunicação e a estratégia de lançamento.</p>
+    </article>
+    <article class="pstep pstep--3">
+      <span class="pstep__n">03.</span>
+      <h3>Divulgação e vendas</h3>
+      <p>Estruturamos a captação de interessados, o atendimento e o processo comercial.</p>
+    </article>
+    <article class="pstep pstep--4">
+      <span class="pstep__n">04.</span>
+      <h3>Execução e expansão</h3>
+      <p>Organizamos o evento e planejamos novas edições e produtos educacionais.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 04 PROVOCAÇÃO ============ -->
+<section class="provoke" id="agora">
+  <div class="container provoke__grid">
+    <div>
+      <h2 class="reveal" data-delay="1">Você vai esperar seu <span class="hl">concorrente</span> transformar conhecimento em negócio primeiro?</h2>
+      <div class="race reveal" data-delay="2" aria-hidden="true">
+        <span class="race__line"></span>
+        <svg class="race__arrow" viewBox="0 0 16 14"><path d="M1 1l13 6-13 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="race__runner">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="25" cy="6" r="3.6" fill="currentColor" stroke="none"/>
+            <path d="M23 12l-5 11 7 5-2 10"/>
+            <path d="M18 23l-7 4-4-2"/>
+            <path d="M22 14l-8 1-4 6"/>
+            <path d="M22 15l5 6 7-1"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div class="provoke__side">
+      <p class="reveal" data-delay="2">Enquanto alguns profissionais se limitam à própria rotina, outros encontram novas formas de crescer, ensinar e fortalecer sua autoridade.</p>
+      <p class="reveal" data-delay="3"><strong>O próximo nome de referência na educação do seu mercado pode ser o seu.</strong></p>
+      <a class="btn btn--ring reveal" data-delay="4" data-wa="Oi! Vi o site e gostaria de mais informações sobre o projeto." href="#" target="_blank" rel="noopener">
+        Quero sair na frente
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 BENEFÍCIOS (checks) ============ -->
+<section class="benefits" id="beneficios">
+  <div class="container">
+    <header class="sec-head">
+      <h2 class="reveal" data-delay="1">Uma nova forma de crescer, <span class="hl">sem depender apenas da sua rotina atual.</span></h2>
+      <p class="reveal" data-delay="2">Com uma estrutura pensada para o seu negócio, você abre espaço para:</p>
+    </header>
+
+    <div class="benefits__grid">
+      <div class="bcard reveal" data-delay="1">
+        <span class="bcard__check"><svg><use href="#i-check"/></svg></span>
+        <h3>Criar novas fontes de receita.</h3>
+      </div>
+      <div class="bcard reveal" data-delay="2">
+        <span class="bcard__check"><svg><use href="#i-check"/></svg></span>
+        <h3>Monetizar o conhecimento que já possui.</h3>
+      </div>
+      <div class="bcard reveal" data-delay="1">
+        <span class="bcard__check"><svg><use href="#i-check"/></svg></span>
+        <h3>Fortalecer sua autoridade no mercado.</h3>
+      </div>
+      <div class="bcard reveal" data-delay="2">
+        <span class="bcard__check"><svg><use href="#i-check"/></svg></span>
+        <h3>Alcançar novos públicos e oportunidades.</h3>
+      </div>
+      <div class="bcard reveal" data-delay="1">
+        <span class="bcard__check"><svg><use href="#i-check"/></svg></span>
+        <h3>Desenvolver seu braço educacional.</h3>
+      </div>
+      <div class="bcard reveal" data-delay="2">
+        <span class="bcard__check"><svg><use href="#i-check"/></svg></span>
+        <h3>Expandir com eventos e produtos digitais.</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 FAQ ============ -->
+<section class="final" id="faq">
+  <div class="container faq">
+    <header class="faq__head">
+      <h2 class="reveal" data-delay="1">Perguntas frequentes</h2>
+    </header>
+    <details class="faq__item reveal" open>
+      <summary><h3>Preciso ter um curso pronto?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
+      <div class="faq__a"><div><p>Não. Podemos começar com um evento presencial e desenvolver novas ofertas conforme o projeto evolui.</p></div></div>
+    </details>
+    <details class="faq__item reveal">
+      <summary><h3>Como funciona a parceria?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
+      <div class="faq__a"><div><p>Nós cuidamos da estrutura estratégica, visual e comercial. Você entra com seu conhecimento e experiência. O modelo é definido em conjunto.</p></div></div>
+    </details>
+    <details class="faq__item reveal">
+      <summary><h3>Vocês trabalham com quais áreas?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
+      <div class="faq__a"><div><p>Com especialistas de diferentes segmentos que já possuem conhecimento, autoridade e potencial educacional.</p></div></div>
+    </details>
+    <details class="faq__item reveal">
+      <summary><h3>Preciso começar com um evento grande?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
+      <div class="faq__a"><div><p>Não. Nossa proposta é começar com experiências menores, validar a demanda e crescer de forma planejada.</p></div></div>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">Copyright © 2026. Todos os direitos reservados</div>
+</footer>
+
+<a class="wa-float" data-wa="Oi! Vi o site e gostaria de mais informações sobre o projeto." href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg><use href="#i-wa"/></svg>
+</a>
+
+<script>
+/* =========================================================
+   CONFIG — troque pelo número oficial (55 + DDD + número)
+   ========================================================= */
+const WHATSAPP_NUMBER = "5551999241975";
+
+/* Links do WhatsApp com mensagem pré-preenchida */
+document.querySelectorAll("[data-wa]").forEach(el => {
+  el.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(el.dataset.wa);
+});
+
+/* Faixas infinitas — edite as palavras aqui */
+const WORDS = ["Autoridade","Eventos","Experiências","Estratégia","Posicionamento","Conhecimento","Expansão","Educação"];
+const item = w => `<span class="ribbon__item">${w}<svg aria-hidden="true"><use href="#i-spark"/></svg></span>`;
+const group = `<div class="ribbon__group">${WORDS.concat(WORDS).map(item).join("")}</div>`;
+document.querySelectorAll("[data-ribbon]").forEach(t => t.innerHTML = group + group);
+
+/* Reveal ao rolar */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+}, { threshold: .15, rootMargin: "0px 0px -40px 0px" });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+/* FAQ: abre/fecha com animação, um por vez */
+const faqItems = document.querySelectorAll(".faq__item");
+faqItems.forEach(d => {
+  if (d.open) d.classList.add("is-open");
+  const body = d.querySelector(".faq__a");
+  d.querySelector("summary").addEventListener("click", e => {
+    e.preventDefault();
+    if (d.open) {
+      d.classList.remove("is-open");
+      body.addEventListener("transitionend", () => { if (!d.classList.contains("is-open")) d.open = false; }, { once: true });
+    } else {
+      faqItems.forEach(o => { if (o !== d && o.open) { o.classList.remove("is-open"); setTimeout(() => { if (!o.classList.contains("is-open")) o.open = false; }, 450); } });
+      d.open = true;
+      requestAnimationFrame(() => requestAnimationFrame(() => d.classList.add("is-open")));
+    }
+  });
+});
+
+/* Botão flutuante aparece depois da hero */
+const fab = document.querySelector(".wa-float");
+const hero = document.querySelector(".hero");
+new IntersectionObserver(([e]) => fab.classList.toggle("is-visible", !e.isIntersecting), { threshold: .1 }).observe(hero);
+
+</script>
+</body>
+</html>
