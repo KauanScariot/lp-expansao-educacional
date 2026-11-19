@@ -540,3 +540,11 @@ section{position:relative}
 }
 @container (max-width:470px){.hopt{padding:18px}}
 @media (min-width:1080px) and (max-width:1250px){.hopts{grid-template-columns:1fr}.hopt{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}.hopt__icon{grid-row:span 2;margin:0}.hopt__btn{grid-column:1 / -1}}
+@media (min-width:1101px) and (max-width:1300px){
+  .dcard{padding:28px 22px}
+  .dcard li{font-size:14.5px;gap:9px}
+}
+@media (min-width:1101px) and (max-width:1200px){
+  .dcard{padding:26px 20px}
+  .dcard li{font-size:14px}
+}
