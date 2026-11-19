@@ -394,7 +394,7 @@ section{position:relative}
 @media (max-width:1079px){
   .hero{display:block;min-height:0;padding:0 0 110px}
   .hero__bg{position:relative;bottom:auto;right:auto;height:min(105vw,620px);width:min(100%,calc(min(105vw,620px) * .95));margin-inline:auto;
-    background:url("hero-mobile.webp?v=1795059772") center / cover no-repeat;
+    background:url("hero-mobile.webp?v=1795060081") center / cover no-repeat;
     -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 16%,#000 84%,transparent 100%);
             mask-image:linear-gradient(90deg,transparent 0%,#000 16%,#000 84%,transparent 100%)}
   .hero__bg::after{background:linear-gradient(0deg,var(--bg) 0%,rgba(7,6,5,0) 26%)}
