@@ -284,6 +284,13 @@ section{position:relative}
 .bcard h3{font-size:clamp(1.25rem,1.75vw,1.65rem);line-height:1.2;letter-spacing:-.025em}
 
 /* =========================================================
+   KICKER — identifica a qual serviço cada seção pertence
+   ========================================================= */
+.kicker{display:block;font-family:var(--font-body);font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.kicker + h2{margin-top:14px !important}
+.provoke .kicker,.final .kicker,.choose .kicker,.digi-svc .kicker{color:#a8721c}
+
+/* =========================================================
    ESCOLHA DO SERVIÇO
    ========================================================= */
 .choose{padding:96px 0 100px;background:#fff;color:#5a5247}
@@ -291,78 +298,78 @@ section{position:relative}
 .choose .sec-head h2{color:#0c0a07}
 .choose .sec-head .hl{color:#a8721c}
 .choose .sec-head p{color:#5a5247}
-.choose__grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1100px;margin-inline:auto}
+.choose__grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto auto auto;column-gap:24px;max-width:1100px;margin-inline:auto}
 .svc{
-  position:relative;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;
-  padding:40px 38px 38px;border-radius:28px;color:var(--text);
+  grid-row:span 5;display:grid;grid-template-rows:subgrid;row-gap:0;
+  position:relative;overflow:hidden;isolation:isolate;
+  padding:40px 38px;border-radius:28px;color:var(--text);
   background:radial-gradient(90% 70% at 100% 0%,rgba(217,164,65,.22),transparent 60%),linear-gradient(180deg,#14100a 0%,#070605 100%);
   border:1px solid rgba(217,164,65,.28);
   box-shadow:0 40px 70px -40px rgba(12,10,7,.65);
   transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s,border-color .5s;
 }
 .svc:hover{transform:translateY(-6px);border-color:rgba(217,164,65,.6);box-shadow:0 50px 80px -40px rgba(12,10,7,.75),0 0 50px -20px rgba(217,164,65,.5)}
-.svc__n{position:absolute;right:30px;top:22px;z-index:-1;font-family:var(--font-display);font-weight:800;font-size:96px;line-height:1;color:transparent;-webkit-text-stroke:1.2px rgba(245,220,166,.18)}
-.svc__tag{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;border:1px solid rgba(217,164,65,.35);background:rgba(217,164,65,.08);color:var(--champagne);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-.svc__tag i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}
-.svc h3{font-size:clamp(1.6rem,2.3vw,2.2rem);margin:22px 0 12px}
+.svc__icon{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;color:#140f08;margin-bottom:24px;
+  background:linear-gradient(145deg,#f0c46a 0%,var(--gold) 50%,var(--gold-2) 100%);box-shadow:0 12px 28px -8px rgba(217,164,65,.6),inset 0 1px 0 rgba(255,255,255,.5)}
+.svc__icon svg{width:26px;height:26px}
+.svc h3{font-size:clamp(1.45rem,2vw,1.9rem);margin:0 0 12px;align-self:end}
 .svc > p{font-size:17px;line-height:1.55;color:#cfc6b6}
-.svc ul{list-style:none;margin:26px 0 32px;padding:0;display:grid;gap:12px}
-.svc li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:#fff;font-weight:500;line-height:1.4}
-.svc li svg{flex:none;width:20px;height:20px;margin-top:1px;padding:4px;border-radius:6px;color:#140f08;background:linear-gradient(145deg,#f0c46a,var(--gold-2))}
-.svc .btn{margin-top:auto;align-self:flex-start;--h:56px;font-size:15px;padding:0 32px}
-.btn--ghost{background:transparent;color:var(--champagne);box-shadow:none;outline:1.5px solid rgba(217,164,65,.55);outline-offset:-1.5px}
-.btn--ghost::after{display:none}
-.btn--ghost:hover{background:rgba(217,164,65,.1);box-shadow:none}
-
-/* Faixa que identifica cada serviço */
-.svc-band{padding:34px 0;background:#000;border-top:1px solid rgba(217,164,65,.22);border-bottom:1px solid rgba(217,164,65,.12)}
-.svc-band__inner{display:flex;align-items:center;justify-content:center;gap:18px;text-align:center;flex-wrap:wrap}
-.svc-band__n{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
-.svc-band__line{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-.svc-band__t{font-family:var(--font-display);font-weight:700;font-size:clamp(1.15rem,1.7vw,1.5rem);color:#fff;letter-spacing:-.01em}
+.svc ul{list-style:none;margin:26px 0 32px;padding:0;display:grid;gap:12px;align-content:start}
+.svc li{display:flex;gap:12px;align-items:center;font-size:16px;color:#fff;font-weight:500;line-height:1.35}
+.chk{flex:none;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;color:#140f08;background:linear-gradient(145deg,#f0c46a,var(--gold-2))}
+.chk svg{width:13px;height:13px}
+.svc .btn{width:100%;--h:58px;font-size:15px;padding:0 20px}
 
 /* =========================================================
-   EXPANSÃO DIGITAL — apresentação
+   ABERTURA DE CADA SERVIÇO
    ========================================================= */
-.digi-intro{padding:100px 0;background:#fff;color:#5a5247}
-.digi-intro__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
-.digi-intro .svc__tag{color:#8a5a1c;border-color:rgba(168,114,28,.35);background:rgba(217,164,65,.1)}
-.digi-intro h2{color:#0c0a07;font-size:clamp(2rem,3.6vw,3.6rem);margin-top:22px;line-height:1.05}
-.digi-intro h2 .hl{color:#a8721c}
-.digi-intro__lead{margin-top:24px;font-size:clamp(1.05rem,1.3vw,1.25rem);line-height:1.6;color:#5a5247;max-width:600px}
-.digi-intro__lead strong{color:#0c0a07;font-weight:600}
-.digi-intro .btn{margin-top:36px;--h:58px;font-size:16px;padding:0 36px;box-shadow:0 16px 36px -14px rgba(168,114,28,.7),inset 0 1px 0 rgba(255,255,255,.45)}
-.vitrine{position:relative;padding:34px;border-radius:28px;background:linear-gradient(180deg,#14100a,#070605);border:1px solid rgba(217,164,65,.3);box-shadow:0 40px 70px -40px rgba(12,10,7,.6);overflow:hidden}
-.vitrine::before{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(closest-side,rgba(217,164,65,.35),transparent);pointer-events:none}
-.vitrine__title{position:relative;font-family:var(--font-display);font-weight:700;font-size:1.25rem;color:#fff;margin-bottom:6px}
-.vitrine__sub{position:relative;font-size:15px;color:#b8ae9e;margin-bottom:22px}
-.vitrine__list{position:relative;display:grid;gap:12px}
-.vitrine__item{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid rgba(217,164,65,.18)}
-.vitrine__item .bcard__check{width:38px;height:38px;border-radius:10px}
-.vitrine__item .bcard__check svg{width:18px;height:18px}
-.vitrine__item span:last-child{color:#fff;font-weight:600;font-size:16.5px;line-height:1.3}
+.svc-intro{padding:100px 0 30px;background:radial-gradient(60% 70% at 50% 0%,rgba(217,164,65,.16),transparent 70%),#000;text-align:center}
+.svc-intro .container{max-width:900px}
+.svc-intro h2{font-size:clamp(2.2rem,4.4vw,4.2rem);line-height:1.02}
+.svc-intro p{margin:22px auto 0;max-width:700px;font-size:clamp(1.05rem,1.35vw,1.25rem);line-height:1.6;color:var(--text)}
+.svc-intro__rule{display:block;width:120px;height:1px;margin:36px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* =========================================================
+   EXPANSÃO DIGITAL — para quem é (painel)
+   ========================================================= */
+.digi-intro{padding:100px 0;background:radial-gradient(60% 50% at 50% 0%,rgba(217,164,65,.16),transparent 70%),#000}
+.digi-intro .svc-intro{padding:0 0 56px;background:none}
+.digi-panel{position:relative;max-width:1060px;margin-inline:auto;padding:56px 56px 52px;border-radius:30px;
+  background:linear-gradient(180deg,#17120b 0%,#0c0a07 100%);border:1px solid rgba(217,164,65,.18);border-bottom:2px solid var(--gold);
+  box-shadow:0 50px 90px -50px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.05)}
+.digi-panel__head{text-align:center;margin-bottom:36px}
+.digi-panel__head h3{font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1.1}
+.digi-panel__grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ditem{display:flex;align-items:center;gap:16px;padding:20px 22px;border-radius:16px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.06);transition:border-color .4s,background .4s}
+.ditem:hover{border-color:rgba(217,164,65,.4);background:rgba(217,164,65,.07)}
+.ditem .bcard__check{width:42px;height:42px;border-radius:12px}
+.ditem .bcard__check svg{width:19px;height:19px}
+.ditem span:last-child{color:#fff;font-size:16.5px;font-weight:500;line-height:1.35}
+.digi-panel__goal{margin-top:30px;text-align:center;font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.6;color:var(--text)}
+.digi-panel__goal strong{color:var(--champagne);font-weight:600}
 
 /* =========================================================
    EXPANSÃO DIGITAL — serviços
    ========================================================= */
-.digi-svc{padding:100px 0;background:radial-gradient(60% 40% at 50% 0%,rgba(217,164,65,.12),transparent 70%),#000}
+.digi-svc{padding:100px 0;background:#fff;color:#5a5247}
+.digi-svc .sec-head h2{color:#0c0a07}
+.digi-svc .sec-head .hl{color:#a8721c}
+.digi-svc .sec-head p{color:#5a5247}
 .digi-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
-.dcard{grid-column:span 2;position:relative;display:flex;flex-direction:column;padding:32px 30px;border-radius:24px;
-  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01));border:1px solid rgba(217,164,65,.2);
-  transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1),border-color .4s,background .4s}
+.dcard{grid-column:span 2;position:relative;display:flex;flex-direction:column;padding:32px 30px;border-radius:24px;color:var(--text);
+  background:radial-gradient(90% 60% at 100% 0%,rgba(217,164,65,.16),transparent 60%),linear-gradient(180deg,#14100a,#070605);border:1px solid rgba(217,164,65,.25);
+  box-shadow:0 30px 60px -36px rgba(12,10,7,.6);
+  transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1),border-color .4s}
 .dcard:nth-child(4),.dcard:nth-child(5){grid-column:span 3}
-.dcard:hover{border-color:rgba(217,164,65,.5);background:linear-gradient(180deg,rgba(217,164,65,.07),rgba(255,255,255,.01))}
-.dcard__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
-.dcard__icon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;color:#140f08;
+.dcard:hover{border-color:rgba(217,164,65,.55)}
+.dcard__icon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;color:#140f08;margin-bottom:22px;
   background:linear-gradient(145deg,#f0c46a 0%,var(--gold) 50%,var(--gold-2) 100%);box-shadow:0 12px 28px -8px rgba(217,164,65,.6),inset 0 1px 0 rgba(255,255,255,.5)}
 .dcard__icon svg{width:24px;height:24px}
-.dcard__n{font-family:var(--font-display);font-weight:700;font-size:14px;color:rgba(245,220,166,.45);letter-spacing:.04em}
-.dcard h3{font-size:clamp(1.2rem,1.5vw,1.4rem);line-height:1.2;margin-bottom:16px}
-.dcard ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.dcard li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.5;color:var(--text)}
-.dcard li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:2px;transform:rotate(45deg);background:var(--gold);box-shadow:0 0 8px rgba(217,164,65,.6)}
-.dcard__note{margin-top:20px;display:flex;gap:10px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:rgba(217,164,65,.08);border:1px solid rgba(217,164,65,.22);font-size:14.5px;line-height:1.45;color:var(--champagne)}
-.dcard__note svg{flex:none;width:18px;height:18px;color:var(--gold);margin-top:1px}
+.dcard h3{font-size:clamp(1.2rem,1.5vw,1.4rem);line-height:1.2;margin-bottom:18px}
+.dcard ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.dcard li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;line-height:1.45;color:var(--text)}
+.dcard li .chk{width:20px;height:20px;border-radius:6px;margin-top:1px}
+.dcard li .chk svg{width:12px;height:12px}
 
 /* CTA Expansão Digital */
 .digi-cta{padding:100px 0 110px;background:#040302;overflow:hidden;text-align:center}
@@ -438,43 +445,24 @@ section{position:relative}
   .dcard,.dcard:nth-child(4),.dcard:nth-child(5){grid-column:span 3}
   .dcard:nth-child(5){grid-column:2 / span 4}
   .svc{padding:34px 28px}
-  .digi-intro__grid{gap:44px}
   .provoke__grid{gap:50px}
 }
 @media (max-width:900px){
   .choose,.digi-intro,.digi-svc{padding:64px 0}
+  .svc-intro{padding:64px 0 16px}
   .digi-cta{padding:70px 0 76px}
-  .choose__grid{grid-template-columns:1fr;gap:16px}
-  .svc{padding:30px 22px;text-align:center;align-items:center}
-  .svc__tag,.svc .btn{align-self:center}
-  .svc__n{font-size:70px;right:18px;top:16px}
+  .choose__grid{grid-template-columns:1fr;grid-template-rows:none;row-gap:16px}
+  .svc{grid-row:auto;display:flex;flex-direction:column;padding:30px 22px;text-align:center;align-items:center}
+  .svc__icon{margin-bottom:18px}
   .svc ul{justify-items:center;margin:20px 0 26px}
-  .svc li{text-align:left}
-  .svc-band{padding:24px 0}
-  .svc-band__line{display:none}
-  .svc-band__inner{flex-direction:column;gap:6px}
-  .digi-intro__grid{grid-template-columns:1fr;gap:36px;text-align:center}
-  .digi-intro .svc__tag{margin-inline:auto}
-  .digi-intro__lead{margin-inline:auto}
-  .vitrine{padding:24px 18px;text-align:left}
-  .vitrine__title,.vitrine__sub{text-align:center}
+  .digi-intro .svc-intro{padding:0 0 36px}
+  .digi-panel{padding:32px 18px 30px;border-radius:24px}
+  .digi-panel__grid{grid-template-columns:1fr;gap:10px}
+  .ditem{padding:16px;text-align:left}
   .digi-grid{grid-template-columns:1fr;gap:14px}
   .dcard,.dcard:nth-child(4),.dcard:nth-child(5){grid-column:auto;padding:26px 20px;text-align:center;align-items:center}
-  .dcard__top{width:100%}
   .dcard ul{text-align:left}
-  .dcard__note{text-align:left}
   .digi-cta .btn{--h:56px;font-size:15px;padding:0 28px}
-  body{font-size:16px}
-  /* Hero mobile: foto no topo, texto centralizado abaixo */
-  .hero .btn{margin-top:32px}
-  .ribbon{padding:14px 0}
-  .ribbon__item{font-size:11px;gap:18px;padding-right:18px;letter-spacing:.14em}
-
-  .btn{--h:56px;font-size:15px;padding:0 30px}
-  .btn__arrow{width:40px;height:40px}
-
-  .sec-head{margin-bottom:40px}
-
   .forwho{display:block;min-height:0;padding:0 0 64px}
   .forwho__bg{position:relative;top:auto;transform:none;aspect-ratio:900 / 860;background-image:url("assets/para-quem-mobile.webp");
     -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 10%,#000 82%,transparent 100%);
@@ -520,6 +508,7 @@ section{position:relative}
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="currentColor"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.88 9.88 0 0 0 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.35-.5.05-1.13.07-1.82-.11a16.5 16.5 0 0 1-1.65-.61c-2.9-1.25-4.8-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.83 2 .9 2.15.07.14.12.31.02.5-.1.2-.14.31-.29.48-.14.17-.3.38-.43.5-.14.15-.29.3-.12.59.17.29.74 1.22 1.59 1.98 1.1.97 2.02 1.28 2.3 1.42.3.15.46.12.63-.07.17-.2.73-.85.92-1.14.2-.29.39-.24.65-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.08.12.08.69-.16 1.37z"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2.5 9L12 4.5 21.5 9 12 13.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6.5 11v4.6c0 1.4 2.5 3.4 5.5 3.4s5.5-2 5.5-3.4V11M21.5 9v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
   <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18c1.4 0 2-1 2-2 0-1.4-1.2-1.6-1.2-2.8 0-1 .8-1.7 1.8-1.7H17a4 4 0 0 0 4-4C21 6.4 17 3 12 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="7.5" cy="11" r="1.3" fill="currentColor"/><circle cx="10" cy="7.2" r="1.3" fill="currentColor"/><circle cx="14.5" cy="7.2" r="1.3" fill="currentColor"/></symbol>
   <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></symbol>
@@ -557,26 +546,24 @@ section{position:relative}
     </header>
     <div class="choose__grid">
       <article class="svc reveal" data-delay="1">
-        <span class="svc__n" aria-hidden="true">01</span>
-        <span class="svc__tag"><i></i>Serviço 01</span>
+        <span class="svc__icon"><svg><use href="#i-cap"/></svg></span>
         <h3>Direcionamento Educacional</h3>
-        <p>Para profissionais de referência que querem transformar conhecimento em eventos, experiências educacionais e novas oportunidades de negócio.</p>
+        <p>Para quem já é referência e quer transformar o próprio conhecimento em eventos, experiências educacionais e uma nova fonte de receita.</p>
         <ul>
-          <li><svg><use href="#i-check"/></svg>Estratégia, posicionamento e lançamento</li>
-          <li><svg><use href="#i-check"/></svg>Eventos presenciais e novas edições</li>
-          <li><svg><use href="#i-check"/></svg>Expansão com mentorias e produtos digitais</li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span>Estratégia, posicionamento e lançamento</li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span>Eventos presenciais e novas edições</li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span>Mentorias e produtos educacionais</li>
         </ul>
-        <a class="btn" href="#educacional">Conhecer o Direcionamento</a>
+        <a class="btn" href="#educacional">Conhecer o Direcionamento Educacional</a>
       </article>
       <article class="svc reveal" data-delay="2">
-        <span class="svc__n" aria-hidden="true">02</span>
-        <span class="svc__tag"><i></i>Serviço 02</span>
+        <span class="svc__icon"><svg><use href="#i-web"/></svg></span>
         <h3>Expansão Digital</h3>
-        <p>Para profissionais e empresas que querem criar, estruturar ou reestruturar a sua presença digital e fortalecer o seu posicionamento.</p>
+        <p>Para profissionais e empresas que querem criar, estruturar ou reestruturar a presença digital e transformá-la em uma vitrine profissional.</p>
         <ul>
-          <li><svg><use href="#i-check"/></svg>Identidade visual e design</li>
-          <li><svg><use href="#i-check"/></svg>Instagram profissional e sites</li>
-          <li><svg><use href="#i-check"/></svg>Edição de vídeos e captação presencial</li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span>Identidade visual e design da marca</li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span>Instagram profissional e criação de sites</li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span>Edição de vídeos e captação presencial</li>
         </ul>
         <a class="btn" href="#expansao-digital">Conhecer a Expansão Digital</a>
       </article>
@@ -584,18 +571,22 @@ section{position:relative}
   </div>
 </section>
 
-<!-- ============ SERVIÇO 01 — DIRECIONAMENTO EDUCACIONAL ============ -->
-<div class="svc-band" id="educacional">
-  <div class="container svc-band__inner">
-    <span class="svc-band__n">Serviço 01</span><span class="svc-band__line" aria-hidden="true"></span><span class="svc-band__t">Direcionamento Educacional</span>
+<!-- ============ DIRECIONAMENTO EDUCACIONAL — ABERTURA ============ -->
+<section class="svc-intro" id="educacional">
+  <div class="container">
+    <span class="kicker reveal">Serviço de projeto educacional</span>
+    <h2 class="reveal" data-delay="1"><span class="hl">Direcionamento</span> Educacional</h2>
+    <p class="reveal" data-delay="2">Você entra com o conhecimento e a autoridade que já construiu. Nós cuidamos da estratégia, do posicionamento, das vendas e da execução para transformar isso em eventos, experiências educacionais e novas fontes de receita.</p>
+    <span class="svc-intro__rule" aria-hidden="true"></span>
   </div>
-</div>
+</section>
 
 <!-- ============ 02 PARA QUEM É ============ -->
 <section class="forwho" id="para-quem">
   <div class="forwho__bg" aria-hidden="true"></div>
   <div class="container forwho__grid">
     <div class="forwho__content">
+      <span class="kicker reveal">Direcionamento Educacional</span>
       <h2 class="reveal">Este projeto é para <span class="hl" style="white-space:nowrap">você que:</span></h2>
       <div class="forwho__list">
         <article class="fcard reveal" data-delay="1">
@@ -619,6 +610,7 @@ section{position:relative}
 <section class="process" id="processo">
   <div class="container">
     <header class="sec-head">
+      <span class="kicker reveal">Direcionamento Educacional</span>
       <h2 class="reveal">Como funciona <span class="hl">nosso projeto?</span></h2>
     </header>
   </div>
@@ -660,6 +652,7 @@ section{position:relative}
 <section class="provoke" id="agora">
   <div class="container provoke__grid">
     <div>
+      <span class="kicker reveal">Direcionamento Educacional</span>
       <h2 class="reveal" data-delay="1">Você vai esperar seu <span class="hl">concorrente</span> transformar conhecimento em negócio primeiro?</h2>
       <div class="race reveal" data-delay="2" aria-hidden="true">
         <span class="race__line"></span>
@@ -689,6 +682,7 @@ section{position:relative}
 <section class="benefits" id="beneficios">
   <div class="container">
     <header class="sec-head">
+      <span class="kicker reveal">Direcionamento Educacional</span>
       <h2 class="reveal" data-delay="1">Uma nova forma de crescer, <span class="hl">sem depender apenas da sua rotina atual.</span></h2>
       <p class="reveal" data-delay="2">Com uma estrutura pensada para o seu negócio, você abre espaço para:</p>
     </header>
@@ -722,104 +716,11 @@ section{position:relative}
   </div>
 </section>
 
-<!-- ============ SERVIÇO 02 — EXPANSÃO DIGITAL ============ -->
-<div class="svc-band" id="expansao-digital">
-  <div class="container svc-band__inner">
-    <span class="svc-band__n">Serviço 02</span><span class="svc-band__line" aria-hidden="true"></span><span class="svc-band__t">Expansão Digital</span>
-  </div>
-</div>
-
-<section class="digi-intro" id="expansao-digital-sobre">
-  <div class="container digi-intro__grid">
-    <div>
-      <span class="svc__tag reveal"><i></i>Expansão Digital</span>
-      <h2 class="reveal" data-delay="1">Sua presença digital como uma <span class="hl">vitrine profissional.</span></h2>
-      <p class="digi-intro__lead reveal" data-delay="2">A Expansão Digital é para <strong>profissionais e empresas que não desejam necessariamente desenvolver um braço educacional</strong>, mas querem criar, estruturar ou reestruturar a sua presença digital, fortalecendo a sua imagem e o seu posicionamento profissional.</p>
-      <a class="btn reveal" data-delay="3" data-wa="Oi! Vi o site e gostaria de mais informações sobre a Expansão Digital." href="#" target="_blank" rel="noopener">Quero minha Expansão Digital</a>
-    </div>
-    <aside class="vitrine reveal" data-delay="2">
-      <p class="vitrine__title">O nosso objetivo</p>
-      <p class="vitrine__sub">Transformar a sua presença digital em uma vitrine:</p>
-      <div class="vitrine__list">
-        <div class="vitrine__item"><span class="bcard__check"><svg><use href="#i-check"/></svg></span><span>Profissional</span></div>
-        <div class="vitrine__item"><span class="bcard__check"><svg><use href="#i-check"/></svg></span><span>Organizada</span></div>
-        <div class="vitrine__item"><span class="bcard__check"><svg><use href="#i-check"/></svg></span><span>Visualmente atrativa</span></div>
-        <div class="vitrine__item"><span class="bcard__check"><svg><use href="#i-check"/></svg></span><span>Estrategicamente posicionada</span></div>
-      </div>
-    </aside>
-  </div>
-</section>
-
-<section class="digi-svc" id="expansao-digital-servicos">
-  <div class="container">
-    <header class="sec-head">
-      <h2 class="reveal">O que fazemos na <span class="hl">Expansão Digital</span></h2>
-      <p class="reveal" data-delay="1">Soluções completas para a sua marca se apresentar com autoridade, consistência e modernidade.</p>
-    </header>
-    <div class="digi-grid">
-      <article class="dcard reveal" data-delay="1">
-        <div class="dcard__top"><span class="dcard__icon"><svg><use href="#i-palette"/></svg></span><span class="dcard__n">01.</span></div>
-        <h3>Identidade visual e design</h3>
-        <ul>
-          <li>Criação ou reformulação de logotipo.</li>
-          <li>Definição ou atualização da paleta de cores.</li>
-          <li>Desenvolvimento de artes e carrosséis.</li>
-          <li>Padronização visual da marca.</li>
-        </ul>
-      </article>
-      <article class="dcard reveal" data-delay="2">
-        <div class="dcard__top"><span class="dcard__icon"><svg><use href="#i-insta"/></svg></span><span class="dcard__n">02.</span></div>
-        <h3>Reformulação do Instagram profissional</h3>
-        <ul>
-          <li>Atualização das cores e da identidade visual.</li>
-          <li>Organização e atualização dos destaques.</li>
-          <li>Padronização dos conteúdos.</li>
-          <li>Transformação do perfil em uma vitrine profissional.</li>
-        </ul>
-      </article>
-      <article class="dcard reveal" data-delay="3">
-        <div class="dcard__top"><span class="dcard__icon"><svg><use href="#i-web"/></svg></span><span class="dcard__n">03.</span></div>
-        <h3>Criação ou atualização de sites</h3>
-        <ul>
-          <li>Desenvolvimento de novos sites.</li>
-          <li>Reformulação de sites existentes.</li>
-          <li>Alinhamento da apresentação à identidade visual do cliente.</li>
-        </ul>
-      </article>
-      <article class="dcard reveal" data-delay="1">
-        <div class="dcard__top"><span class="dcard__icon"><svg><use href="#i-video"/></svg></span><span class="dcard__n">04.</span></div>
-        <h3>Edição de vídeos</h3>
-        <ul>
-          <li>Edição de conteúdos profissionais para redes sociais.</li>
-          <li>Produção de materiais audiovisuais conforme as necessidades do projeto.</li>
-        </ul>
-      </article>
-      <article class="dcard reveal" data-delay="2">
-        <div class="dcard__top"><span class="dcard__icon"><svg><use href="#i-camera"/></svg></span><span class="dcard__n">05.</span></div>
-        <h3>Captação presencial de conteúdo</h3>
-        <ul>
-          <li>Possibilidade de até duas captações presenciais por mês.</li>
-          <li>Atendimento em Guaíba, Porto Alegre e Eldorado do Sul, no Rio Grande do Sul.</li>
-          <li>Serviço mediante agendamento e conforme o pacote contratado.</li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="digi-cta" id="expansao-digital-contato">
-  <div class="container">
-    <h2 class="reveal">Pronto para transformar a sua <span class="hl">presença digital?</span></h2>
-    <p class="reveal" data-delay="1">Vamos estruturar uma imagem à altura do profissional que você já é. Fale com a gente e monte o pacote ideal para a sua marca.</p>
-    <a class="btn reveal" data-delay="2" data-wa="Oi! Vi o site e gostaria de mais informações sobre a Expansão Digital." href="#" target="_blank" rel="noopener">Quero minha Expansão Digital</a>
-    <span class="digi-cta__alt reveal" data-delay="3">Procura o Direcionamento Educacional? <a href="#educacional">Veja aqui</a></span>
-  </div>
-</section>
-
 <!-- ============ 06 FAQ ============ -->
 <section class="final" id="faq">
   <div class="container faq">
     <header class="faq__head">
+      <span class="kicker reveal">Direcionamento Educacional</span>
       <h2 class="reveal" data-delay="1">Perguntas frequentes</h2>
     </header>
     <details class="faq__item reveal" open>
@@ -838,6 +739,100 @@ section{position:relative}
       <summary><h3>Preciso começar com um evento grande?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
       <div class="faq__a"><div><p>Não. Nossa proposta é começar com experiências menores, validar a demanda e crescer de forma planejada.</p></div></div>
     </details>
+  </div>
+</section>
+
+<!-- ============ EXPANSÃO DIGITAL — ABERTURA + PARA QUEM É ============ -->
+<section class="digi-intro" id="expansao-digital">
+  <div class="svc-intro">
+    <div class="container">
+      <span class="kicker reveal">Serviço de presença digital</span>
+      <h2 class="reveal" data-delay="1"><span class="hl">Expansão</span> Digital</h2>
+      <p class="reveal" data-delay="2">Para quem não quer, necessariamente, criar um braço educacional, mas precisa de uma presença digital à altura do seu trabalho. Criamos, estruturamos ou reestruturamos a sua imagem online para fortalecer o seu posicionamento profissional.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="digi-panel reveal">
+      <header class="digi-panel__head">
+        <span class="kicker">Expansão Digital</span>
+        <h3 style="margin-top:12px">Para quem é a <span class="hl">Expansão Digital?</span></h3>
+      </header>
+      <div class="digi-panel__grid">
+        <div class="ditem"><span class="bcard__check"><svg><use href="#i-check"/></svg></span><span>Profissionais que querem fortalecer a sua imagem</span></div>
+        <div class="ditem"><span class="bcard__check"><svg><use href="#i-check"/></svg></span><span>Empresas que precisam estruturar a presença digital</span></div>
+        <div class="ditem"><span class="bcard__check"><svg><use href="#i-check"/></svg></span><span>Quem tem um perfil ou site desatualizado</span></div>
+        <div class="ditem"><span class="bcard__check"><svg><use href="#i-check"/></svg></span><span>Quem quer um posicionamento mais profissional</span></div>
+      </div>
+      <p class="digi-panel__goal">O objetivo: transformar a sua presença digital em uma <strong>vitrine profissional, organizada, visualmente atrativa e estrategicamente posicionada.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="digi-svc" id="expansao-digital-servicos">
+  <div class="container">
+    <header class="sec-head">
+      <span class="kicker reveal">Expansão Digital</span>
+      <h2 class="reveal">O que fazemos na <span class="hl">Expansão Digital</span></h2>
+      <p class="reveal" data-delay="1">Soluções completas para a sua marca se apresentar com autoridade, consistência e modernidade.</p>
+    </header>
+    <div class="digi-grid">
+      <article class="dcard reveal" data-delay="1">
+        <span class="dcard__icon"><svg><use href="#i-palette"/></svg></span>
+        <h3>Identidade visual e design</h3>
+        <ul>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Criação ou reformulação de logotipo.</span></li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Definição ou atualização da paleta de cores.</span></li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Desenvolvimento de artes e carrosséis.</span></li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Padronização visual da marca.</span></li>
+        </ul>
+      </article>
+      <article class="dcard reveal" data-delay="2">
+        <span class="dcard__icon"><svg><use href="#i-insta"/></svg></span>
+        <h3>Reformulação do Instagram profissional</h3>
+        <ul>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Atualização das cores e da identidade visual.</span></li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Organização e atualização dos destaques.</span></li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Padronização dos conteúdos.</span></li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Transformação do perfil em uma vitrine profissional.</span></li>
+        </ul>
+      </article>
+      <article class="dcard reveal" data-delay="3">
+        <span class="dcard__icon"><svg><use href="#i-web"/></svg></span>
+        <h3>Criação ou atualização de sites</h3>
+        <ul>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Desenvolvimento de novos sites.</span></li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Reformulação de sites existentes.</span></li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Alinhamento da apresentação à identidade visual do cliente.</span></li>
+        </ul>
+      </article>
+      <article class="dcard reveal" data-delay="1">
+        <span class="dcard__icon"><svg><use href="#i-video"/></svg></span>
+        <h3>Edição de vídeos</h3>
+        <ul>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Edição de conteúdos profissionais para redes sociais.</span></li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Produção de materiais audiovisuais conforme as necessidades do projeto.</span></li>
+        </ul>
+      </article>
+      <article class="dcard reveal" data-delay="2">
+        <span class="dcard__icon"><svg><use href="#i-camera"/></svg></span>
+        <h3>Captação presencial de conteúdo</h3>
+        <ul>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Possibilidade de até duas captações presenciais por mês.</span></li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Atendimento em Guaíba, Porto Alegre e Eldorado do Sul, no Rio Grande do Sul.</span></li>
+          <li><span class="chk"><svg><use href="#i-check"/></svg></span><span>Serviço mediante agendamento e conforme o pacote contratado.</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="digi-cta" id="expansao-digital-contato">
+  <div class="container">
+    <span class="kicker reveal">Expansão Digital</span>
+    <h2 class="reveal">Pronto para transformar a sua <span class="hl">presença digital?</span></h2>
+    <p class="reveal" data-delay="1">Vamos estruturar uma imagem à altura do profissional que você já é. Fale com a gente e monte o pacote ideal para a sua marca.</p>
+    <a class="btn reveal" data-delay="2" data-wa="Oi! Vi o site e gostaria de mais informações sobre a Expansão Digital." href="#" target="_blank" rel="noopener">Quero minha Expansão Digital</a>
+    <span class="digi-cta__alt reveal" data-delay="3">Procura o Direcionamento Educacional? <a href="#educacional">Veja aqui</a></span>
   </div>
 </section>
 
