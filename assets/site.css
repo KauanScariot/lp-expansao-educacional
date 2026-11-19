@@ -436,7 +436,10 @@ section{position:relative}
   .choose__grid{grid-template-columns:1fr;grid-template-rows:none;row-gap:16px}
   .svc{grid-row:auto;display:flex;flex-direction:column;padding:30px 22px;text-align:center;align-items:center}
   .svc__icon{margin-bottom:18px}
-  .svc ul{justify-items:center;margin:20px 0 26px}
+  .svc h3,.svc > p{align-self:stretch;text-align:center}
+  .svc ul{align-self:stretch;justify-items:start;text-align:left;margin:20px 0 26px}
+  .svc li{align-items:flex-start}
+  .svc .btn{align-self:stretch}
   .digi-intro .svc-intro{padding:0 0 36px}
   .digi-panel{padding:32px 18px 30px;border-radius:24px}
   .digi-panel__grid{grid-template-columns:1fr;gap:10px}
