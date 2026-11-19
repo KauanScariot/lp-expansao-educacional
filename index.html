@@ -399,6 +399,9 @@ section{position:relative}
 .final{border-top:1px solid rgba(12,10,7,.08)}
 .final .container{position:relative}
 .faq__item{border-top-color:rgba(12,10,7,.12)}
+.faq__group{margin:44px 0 6px;font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#a8721c}
+.faq__head + .faq__group{margin-top:0}
+.faq__group + .faq__item{border-top-color:rgba(12,10,7,.12)}
 .faq__item:last-child{border-bottom-color:rgba(12,10,7,.12)}
 .faq__item p{color:var(--ink-2)}
 .faq__item summary:hover h3{color:var(--gold-ink)}
@@ -716,32 +719,6 @@ section{position:relative}
   </div>
 </section>
 
-<!-- ============ 06 FAQ ============ -->
-<section class="final" id="faq">
-  <div class="container faq">
-    <header class="faq__head">
-      <span class="kicker reveal">Direcionamento Educacional</span>
-      <h2 class="reveal" data-delay="1">Perguntas frequentes</h2>
-    </header>
-    <details class="faq__item reveal" open>
-      <summary><h3>Preciso ter um curso pronto?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
-      <div class="faq__a"><div><p>Não. Podemos começar com um evento presencial e desenvolver novas ofertas conforme o projeto evolui.</p></div></div>
-    </details>
-    <details class="faq__item reveal">
-      <summary><h3>Como funciona a parceria?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
-      <div class="faq__a"><div><p>Nós cuidamos da estrutura estratégica, visual e comercial. Você entra com seu conhecimento e experiência. O modelo é definido em conjunto.</p></div></div>
-    </details>
-    <details class="faq__item reveal">
-      <summary><h3>Vocês trabalham com quais áreas?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
-      <div class="faq__a"><div><p>Com especialistas de diferentes segmentos que já possuem conhecimento, autoridade e potencial educacional.</p></div></div>
-    </details>
-    <details class="faq__item reveal">
-      <summary><h3>Preciso começar com um evento grande?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
-      <div class="faq__a"><div><p>Não. Nossa proposta é começar com experiências menores, validar a demanda e crescer de forma planejada.</p></div></div>
-    </details>
-  </div>
-</section>
-
 <!-- ============ EXPANSÃO DIGITAL — ABERTURA + PARA QUEM É ============ -->
 <section class="digi-intro" id="expansao-digital">
   <div class="svc-intro">
@@ -833,6 +810,54 @@ section{position:relative}
     <p class="reveal" data-delay="1">Vamos estruturar uma imagem à altura do profissional que você já é. Fale com a gente e monte o pacote ideal para a sua marca.</p>
     <a class="btn reveal" data-delay="2" data-wa="Oi! Vi o site e gostaria de mais informações sobre a Expansão Digital." href="#" target="_blank" rel="noopener">Quero minha Expansão Digital</a>
     <span class="digi-cta__alt reveal" data-delay="3">Procura o Direcionamento Educacional? <a href="#educacional">Veja aqui</a></span>
+  </div>
+</section>
+
+<!-- ============ FAQ (os dois serviços) ============ -->
+<section class="final" id="faq">
+  <div class="container faq">
+    <header class="faq__head">
+      <h2 class="reveal">Perguntas frequentes</h2>
+    </header>
+    <p class="faq__group reveal">Geral</p>
+    <details class="faq__item reveal" open>
+      <summary><h3>Qual a diferença entre o Direcionamento Educacional e a Expansão Digital?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
+      <div class="faq__a"><div><p>O Direcionamento Educacional transforma o seu conhecimento em eventos, experiências educacionais e novas fontes de receita. A Expansão Digital é para quem não quer, necessariamente, criar um braço educacional, mas precisa criar, estruturar ou reestruturar a presença digital para fortalecer a imagem e o posicionamento profissional.</p></div></div>
+    </details>
+    <p class="faq__group reveal">Direcionamento Educacional</p>
+    <details class="faq__item reveal">
+      <summary><h3>Preciso ter um curso pronto?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
+      <div class="faq__a"><div><p>Não. Podemos começar com um evento presencial e desenvolver novas ofertas conforme o projeto evolui.</p></div></div>
+    </details>
+    <details class="faq__item reveal">
+      <summary><h3>Como funciona a parceria?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
+      <div class="faq__a"><div><p>Nós cuidamos da estrutura estratégica, visual e comercial. Você entra com seu conhecimento e experiência. O modelo é definido em conjunto.</p></div></div>
+    </details>
+    <details class="faq__item reveal">
+      <summary><h3>Vocês trabalham com quais áreas?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
+      <div class="faq__a"><div><p>Com especialistas de diferentes segmentos que já possuem conhecimento, autoridade e potencial educacional.</p></div></div>
+    </details>
+    <details class="faq__item reveal">
+      <summary><h3>Preciso começar com um evento grande?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
+      <div class="faq__a"><div><p>Não. Nossa proposta é começar com experiências menores, validar a demanda e crescer de forma planejada.</p></div></div>
+    </details>
+    <p class="faq__group reveal">Expansão Digital</p>
+    <details class="faq__item reveal">
+      <summary><h3>Preciso ter um projeto educacional para contratar a Expansão Digital?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
+      <div class="faq__a"><div><p>Não. A Expansão Digital é um serviço independente, pensado para profissionais e empresas que querem fortalecer a presença digital, com ou sem um braço educacional.</p></div></div>
+    </details>
+    <details class="faq__item reveal">
+      <summary><h3>O que está incluído na Expansão Digital?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
+      <div class="faq__a"><div><p>Identidade visual e design (logotipo, paleta de cores, artes e carrosséis), reformulação do Instagram profissional, criação ou atualização de sites, edição de vídeos e captação presencial de conteúdo.</p></div></div>
+    </details>
+    <details class="faq__item reveal">
+      <summary><h3>Vocês criam sites do zero ou também reformulam?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
+      <div class="faq__a"><div><p>Os dois. Desenvolvemos novos sites e também reformulamos sites existentes, sempre alinhando a apresentação à identidade visual do cliente.</p></div></div>
+    </details>
+    <details class="faq__item reveal">
+      <summary><h3>Como funciona a captação presencial de conteúdo?</h3><span class="faq__plus" aria-hidden="true"></span></summary>
+      <div class="faq__a"><div><p>É possível ter até duas captações presenciais por mês, com atendimento em Guaíba, Porto Alegre e Eldorado do Sul (RS), mediante agendamento e conforme o pacote contratado.</p></div></div>
+    </details>
   </div>
 </section>
 
