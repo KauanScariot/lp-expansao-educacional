@@ -102,7 +102,7 @@ section{position:relative}
 /* A foto fica ancorada à direita, sempre inteira (sem cortes laterais) */
 /* Foto ancorada no canto inferior direito, sempre inteira e ocupando ~metade da tela */
 .hero__bg{position:absolute;bottom:0;right:0;height:var(--H);width:calc(var(--H) * 2.171);pointer-events:none;
-  background:url("hero-desktop.webp") center / cover no-repeat;
+  background:url("hero-desktop.webp?v=1795058932") center / cover no-repeat;
   -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 10%);mask-image:linear-gradient(180deg,transparent 0%,#000 10%)}
 .hero__bg::after{content:"";position:absolute;inset:0;
   background:linear-gradient(90deg,var(--bg) 0%,rgba(7,6,5,.6) 10%,rgba(7,6,5,0) 26%),linear-gradient(0deg,rgba(7,6,5,.5) 0%,rgba(7,6,5,0) 22%)}
@@ -394,7 +394,7 @@ section{position:relative}
 @media (max-width:1079px){
   .hero{display:block;min-height:0;padding:0 0 110px}
   .hero__bg{position:relative;bottom:auto;right:auto;height:min(95.7vw,640px);width:min(100%,calc(min(95.7vw,640px) * 1.045));margin-inline:auto;
-    background:url("hero-mobile.webp") center / cover no-repeat;
+    background:url("hero-mobile.webp?v=1795058932") center / cover no-repeat;
     -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 16%,#000 84%,transparent 100%);
             mask-image:linear-gradient(90deg,transparent 0%,#000 16%,#000 84%,transparent 100%)}
   .hero__bg::after{background:linear-gradient(0deg,var(--bg) 0%,rgba(7,6,5,0) 26%)}
