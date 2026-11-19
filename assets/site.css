@@ -101,14 +101,14 @@ section{position:relative}
 }
 /* A foto fica ancorada à direita, sempre inteira (sem cortes laterais) */
 /* Foto ancorada no canto inferior direito, sempre inteira e ocupando ~metade da tela */
-.hero__bg{position:absolute;bottom:0;right:0;height:var(--H);width:calc(var(--H) * 1.7896);pointer-events:none;
-  background:url("hero-desktop.webp?v=1795059271") center / cover no-repeat;
+.hero__bg{position:absolute;bottom:0;right:0;height:var(--H);width:calc(var(--H) * 2.171);pointer-events:none;
+  background:url("hero-desktop.webp?v=1795059457") center / cover no-repeat;
   -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 10%);mask-image:linear-gradient(180deg,transparent 0%,#000 10%)}
 .hero__bg::after{content:"";position:absolute;inset:0;
   background:linear-gradient(90deg,var(--bg) 0%,rgba(7,6,5,.6) 10%,rgba(7,6,5,0) 26%),linear-gradient(0deg,rgba(7,6,5,.5) 0%,rgba(7,6,5,0) 22%)}
 .hero__inner{position:relative;width:min(1680px,100% - 48px);margin-inline:auto;padding-left:clamp(0px,4.2vw,96px)}
 /* O texto termina antes de onde começam os elementos da foto (~45% da imagem) */
-.hero__content{max-width:min(780px,calc(100vw - 1.08 * var(--H) - max(24px,(100vw - 1680px) / 2) - clamp(0px,4.2vw,96px) - 48px))}
+.hero__content{max-width:min(780px,calc(100vw - 1.15 * var(--H) - max(24px,(100vw - 1680px) / 2) - clamp(0px,4.2vw,96px) - 48px))}
 .hero h1{font-size:clamp(1.85rem,2.75vw,3.6rem)}
 .hero__sub{margin-top:12px;font-size:clamp(1.05rem,1.4vw,1.75rem);line-height:1.35;letter-spacing:-.02em;color:#b3aa9c;font-weight:400}
 .hero .btn{--h:58px;margin-top:36px;white-space:nowrap;font-size:clamp(15px,1.1vw,17px);padding:0 clamp(30px,2.6vw,42px)}
@@ -393,8 +393,8 @@ section{position:relative}
 /* Abaixo de 1080px: hero vertical — foto (recorte vertical) em cima, texto embaixo */
 @media (max-width:1079px){
   .hero{display:block;min-height:0;padding:0 0 110px}
-  .hero__bg{position:relative;bottom:auto;right:auto;height:min(85.7vw,560px);width:min(100%,calc(min(85.7vw,560px) * 1.1669));margin-inline:auto;
-    background:url("hero-mobile.webp?v=1795059271") center / cover no-repeat;
+  .hero__bg{position:relative;bottom:auto;right:auto;height:min(77.6vw,520px);width:min(100%,calc(min(77.6vw,520px) * 1.289));margin-inline:auto;
+    background:url("hero-mobile.webp?v=1795059457") center / cover no-repeat;
     -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 16%,#000 84%,transparent 100%);
             mask-image:linear-gradient(90deg,transparent 0%,#000 16%,#000 84%,transparent 100%)}
   .hero__bg::after{background:linear-gradient(0deg,var(--bg) 0%,rgba(7,6,5,0) 26%)}
