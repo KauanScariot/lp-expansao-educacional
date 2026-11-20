@@ -617,3 +617,12 @@ section{position:relative}
   .digi-svc .dcard h3{margin-bottom:14px}
   .digi-svc .dcard ul{width:100%}
 }
+
+/* Expansão Digital (mobile): ícone e título na mesma linha */
+@media (max-width:900px){
+  .digi-svc .dcard,.digi-svc .dcard:nth-child(4),.digi-svc .dcard:nth-child(5){display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}
+  .digi-svc .dcard__icon{margin:0;width:48px;height:48px;border-radius:14px}
+  .digi-svc .dcard__icon svg{width:22px;height:22px}
+  .digi-svc .dcard h3{margin:0}
+  .digi-svc .dcard ul{grid-column:1 / -1;margin-top:18px}
+}
