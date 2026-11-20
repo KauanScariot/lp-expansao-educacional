@@ -488,12 +488,11 @@ section{position:relative}
    NAVEGAÇÃO ENTRE AS PÁGINAS
    ========================================================= */
 .topnav{position:absolute;top:0;left:0;right:0;z-index:20}
-.topnav__inner{width:min(1680px,100% - 48px);margin-inline:auto;padding:22px clamp(0px,4.2vw,96px) 0;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.topnav__inner{width:min(1680px,100% - 48px);margin-inline:auto;padding:22px clamp(0px,4.2vw,96px) 0;display:flex;align-items:center;justify-content:center;gap:20px}
 .topnav a{font-size:14px;font-weight:600;color:rgba(255,255,255,.72);transition:color .3s}
 .topnav a:hover,.topnav a[aria-current="page"]{color:var(--champagne)}
-.topnav__home{font-family:var(--font-display);font-weight:700;letter-spacing:.02em;color:#fff !important}
 .topnav__links{display:flex;gap:6px;padding:5px;border-radius:999px;background:rgba(7,6,5,.55);border:1px solid rgba(217,164,65,.25);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.topnav__links a{padding:9px 16px;border-radius:999px}
+.topnav__links a{padding:9px 18px;border-radius:999px;white-space:nowrap}
 .topnav__links a[aria-current="page"]{background:linear-gradient(90deg,#f3cd7a,var(--gold) 45%,var(--gold-2));color:#140f08 !important}
 
 /* =========================================================
@@ -531,7 +530,6 @@ section{position:relative}
   .hero--digital .hero__content{max-width:none}
 }
 @media (max-width:600px){
-  .topnav__home{display:none}
   .topnav__inner{justify-content:center}
   .topnav__links a{padding:8px 14px;font-size:13px}
   .topnav .nf{display:none}
