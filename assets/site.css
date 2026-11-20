@@ -652,3 +652,45 @@ section{position:relative}
   .choose .svc h3{font-size:1.15rem}
   .choose .svc .btn{font-size:13.5px}
 }
+
+/* =========================================================
+   TODOS OS CARDS (celular/tablet): alinhados à esquerda,
+   ícone/check e título na mesma linha
+   ========================================================= */
+@media (max-width:900px){
+  /* "Para quem é" (as duas páginas) */
+  .fcard{flex-direction:row;align-items:flex-start;text-align:left;gap:16px;padding:22px 20px}
+  .fcard > div{padding-top:2px}
+  .fcard h3{margin:4px 0 8px}
+  /* Benefícios (Educacional) */
+  .bcard{flex-direction:row;align-items:center;justify-content:flex-start;text-align:left;gap:16px}
+  /* Como funciona (Educacional): número na mesma linha do título */
+  .pstep{text-align:left;display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:baseline}
+  .pstep__n{margin:0}
+  .pstep h3{margin:0}
+  .pstep p{grid-column:1 / -1;margin-top:10px}
+}
+@media (max-width:1079px){
+  /* Opções da hero (página inicial) */
+  .hopt{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center;text-align:left}
+  .hopt__icon{margin:0}
+  .hopt__desc{grid-column:1 / -1;margin-top:8px}
+  .hopt__btn{grid-column:1 / -1}
+}
+@media (max-width:600px){
+  .hopt{align-items:center;text-align:left}
+}
+
+/* Expansão Digital (tablet): 2 + 2 + 1 card na largura toda */
+@media (min-width:601px) and (max-width:1100px){
+  .digi-svc .digi-grid{grid-template-columns:1fr 1fr;gap:18px}
+  .digi-svc .dcard,.digi-svc .dcard:nth-child(4){grid-column:auto}
+  .digi-svc .dcard:nth-child(5){grid-column:1 / -1}
+}
+@media (min-width:901px) and (max-width:1100px){
+  .digi-svc .dcard{display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center;text-align:left}
+  .digi-svc .dcard__icon{margin:0;width:48px;height:48px;border-radius:14px}
+  .digi-svc .dcard__icon svg{width:22px;height:22px}
+  .digi-svc .dcard h3{margin:0}
+  .digi-svc .dcard ul{grid-column:1 / -1;margin-top:18px}
+}
