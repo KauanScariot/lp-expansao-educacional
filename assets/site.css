@@ -626,3 +626,29 @@ section{position:relative}
   .digi-svc .dcard h3{margin:0}
   .digi-svc .dcard ul{grid-column:1 / -1;margin-top:18px}
 }
+
+/* Cards claros nas seções brancas (página inicial: "Entenda cada caminho") */
+.choose .svc{background:linear-gradient(180deg,#fdfbf7 0%,#f6f1e8 100%);border:1px solid rgba(168,114,28,.18);color:#5a5247;
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 24px 50px -32px rgba(60,40,10,.35)}
+.choose .svc:hover{border-color:rgba(168,114,28,.45);box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 30px 60px -30px rgba(60,40,10,.45)}
+.choose .svc h3{color:#0c0a07}
+.choose .svc > p{color:#5a5247}
+.choose .svc li{color:#2a241c}
+@media (max-width:900px){
+  .choose .svc{display:grid;grid-row:auto;grid-template-rows:none;row-gap:0;grid-template-columns:auto 1fr;column-gap:16px;align-items:center;text-align:left;padding:26px 22px}
+  .choose .svc__icon{margin:0;width:48px;height:48px;border-radius:14px}
+  .choose .svc__icon svg{width:22px;height:22px}
+  .choose .svc h3,.choose .svc > p{grid-column:auto;text-align:left;margin:0;align-self:center}
+  .choose .svc > p{grid-column:1 / -1;margin-top:16px}
+  .choose .svc ul{grid-column:1 / -1;justify-items:start;margin:18px 0 22px}
+  .choose .svc .btn{grid-column:1 / -1;width:100%}
+}
+@media (max-width:900px){
+  .choose .svc > *{min-width:0}
+  .choose .svc .btn{max-width:100%;height:auto;min-height:56px;padding:12px 18px;white-space:normal;line-height:1.2}
+}
+@media (max-width:380px){
+  .choose .svc{padding:22px 18px;column-gap:12px}
+  .choose .svc h3{font-size:1.15rem}
+  .choose .svc .btn{font-size:13.5px}
+}
