@@ -602,3 +602,10 @@ section{position:relative}
 /* Expansão Digital: mockup próprio na seção "Para quem é" */
 .forwho--digital .forwho__bg{background-image:url("para-quem-digi.webp?v=1795203308")}
 @media (max-width:900px){ .forwho--digital .forwho__bg{background-image:url("para-quem-digi-mobile.webp?v=1795203308")} }
+
+/* Expansão Digital: cards claros sobre o fundo branco */
+.digi-svc .dcard{background:linear-gradient(180deg,#fdfbf7 0%,#f6f1e8 100%);border:1px solid rgba(168,114,28,.18);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 24px 50px -32px rgba(60,40,10,.35);color:#5a5247}
+.digi-svc .dcard:hover{border-color:rgba(168,114,28,.45);box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 30px 60px -30px rgba(60,40,10,.45)}
+.digi-svc .dcard h3{color:#0c0a07}
+.digi-svc .dcard li{color:#5a5247}
