@@ -558,3 +558,11 @@ section{position:relative}
   .hero--edu .hero__bg{height:min(105vw,620px);width:min(100%,calc(min(105vw,620px) * .95));background-image:url("edu-hero-mobile.webp?v=1795139925")}
   .hero--edu .hero__content{max-width:none}
 }
+
+/* Telas empilhadas: a navegação deixa de ficar por cima da foto */
+@media (max-width:1079px){
+  .topnav{position:relative}
+  .topnav__inner{padding-bottom:10px}
+  .hero--edu .hero__bg::after,.hero--home .hero__bg::after{background:linear-gradient(180deg,var(--bg) 0%,rgba(7,6,5,0) 12%),linear-gradient(0deg,var(--bg) 0%,rgba(7,6,5,0) 28%)}
+  .hero .hero__bg::after{background:linear-gradient(180deg,var(--bg) 0%,rgba(7,6,5,0) 12%),linear-gradient(0deg,var(--bg) 0%,rgba(7,6,5,0) 28%)}
+}
