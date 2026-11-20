@@ -577,3 +577,24 @@ section{position:relative}
   .hero--edu .hero__bg::after,.hero--home .hero__bg::after{background:linear-gradient(180deg,var(--bg) 0%,rgba(7,6,5,0) 12%),linear-gradient(0deg,var(--bg) 0%,rgba(7,6,5,0) 28%)}
   .hero .hero__bg::after{background:linear-gradient(180deg,var(--bg) 0%,rgba(7,6,5,0) 12%),linear-gradient(0deg,var(--bg) 0%,rgba(7,6,5,0) 28%)}
 }
+
+/* =========================================================
+   HERO DA EXPANSÃO DIGITAL — foto ocupa a largura toda
+   ========================================================= */
+@media (min-width:1080px){
+  .hero--digital{min-height:calc(56.28vw + 80px);padding-top:150px}
+  .hero--digital .hero__bg{top:80px;left:0;right:0;bottom:0;width:auto;height:auto;
+    background:url("digi-hero.webp?v=1795201877") right center / cover no-repeat;-webkit-mask-image:none;mask-image:none}
+  .hero--digital .hero__bg::after{background:linear-gradient(180deg,var(--bg) 0%,rgba(7,6,5,0) 10%),linear-gradient(90deg,var(--bg) 0%,rgba(7,6,5,.55) 22%,rgba(7,6,5,0) 40%),linear-gradient(0deg,rgba(7,6,5,.6) 0%,rgba(7,6,5,0) 22%)}
+  /* o texto termina antes do tripé (46% da largura) */
+  .hero--digital .hero__content{max-width:min(760px,calc(46vw - max(24px,(100vw - 1680px) / 2) - clamp(0px,4.2vw,96px) - 36px))}
+}
+@media (max-width:1079px){
+  .hero--digital .hero__bg{width:100%;height:calc(100vw * 0.5631);margin:0;
+    background:url("digi-hero-center.webp?v=1795201877") center / cover no-repeat;-webkit-mask-image:none;mask-image:none}
+  .hero--digital .hero__bg::after{background:linear-gradient(180deg,var(--bg) 0%,rgba(7,6,5,0) 12%),linear-gradient(0deg,var(--bg) 0%,rgba(7,6,5,0) 28%)}
+  .hero--digital .hero__content{max-width:none}
+}
+@media (max-width:600px){
+  .hero--digital .hero__bg{height:105vw;background-image:url("digi-hero-mobile.webp?v=1795201877")}
+}
