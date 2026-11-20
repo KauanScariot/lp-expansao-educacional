@@ -550,13 +550,23 @@ section{position:relative}
 }
 
 /* =========================================================
-   HERO DO DIRECIONAMENTO EDUCACIONAL — rei de xadrez
+   HERO DO DIRECIONAMENTO EDUCACIONAL — foto ocupa a largura toda
    ========================================================= */
-.hero--edu .hero__bg{height:calc(var(--H) * .9);width:calc(var(--H) * .9 * 1.7768);background-image:url("edu-hero.webp?v=1795139925")}
-.hero--edu .hero__content{max-width:min(780px,calc(100vw - .98 * var(--H) - max(24px,(100vw - 1680px) / 2) - clamp(0px,4.2vw,96px) - 48px))}
+@media (min-width:1080px){
+  .hero--edu{min-height:calc(56.28vw + 80px);padding-top:150px}
+  .hero--edu .hero__bg{top:80px;left:0;right:0;bottom:0;width:auto;height:auto;
+    background:url("edu-hero.webp?v=1795140663") right center / cover no-repeat;-webkit-mask-image:none;mask-image:none}
+  .hero--edu .hero__bg::after{background:linear-gradient(180deg,var(--bg) 0%,rgba(7,6,5,0) 10%),linear-gradient(90deg,var(--bg) 0%,rgba(7,6,5,.55) 22%,rgba(7,6,5,0) 40%),linear-gradient(0deg,rgba(7,6,5,.6) 0%,rgba(7,6,5,0) 22%)}
+  /* o texto termina antes de onde começam as notas (42% da largura) */
+  .hero--edu .hero__content{max-width:min(780px,calc(42vw - max(24px,(100vw - 1680px) / 2) - clamp(0px,4.2vw,96px) - 36px))}
+}
 @media (max-width:1079px){
-  .hero--edu .hero__bg{height:min(105vw,620px);width:min(100%,calc(min(105vw,620px) * .95));background-image:url("edu-hero-mobile.webp?v=1795139925")}
+  .hero--edu .hero__bg{width:100%;height:56.28vw;margin:0;
+    background:url("edu-hero.webp?v=1795140663") center / cover no-repeat;-webkit-mask-image:none;mask-image:none}
   .hero--edu .hero__content{max-width:none}
+}
+@media (max-width:600px){
+  .hero--edu .hero__bg{height:105vw;background-image:url("edu-hero-mobile.webp?v=1795140663")}
 }
 
 /* Telas empilhadas: a navegação deixa de ficar por cima da foto */
