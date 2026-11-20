@@ -598,3 +598,7 @@ section{position:relative}
 @media (max-width:600px){
   .hero--digital .hero__bg{height:105vw;background-image:url("digi-hero-mobile.webp?v=1795201877")}
 }
+
+/* Expansão Digital: mockup próprio na seção "Para quem é" */
+.forwho--digital .forwho__bg{background-image:url("para-quem-digi.webp?v=1795203308")}
+@media (max-width:900px){ .forwho--digital .forwho__bg{background-image:url("para-quem-digi-mobile.webp?v=1795203308")} }
